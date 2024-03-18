@@ -6,4 +6,6 @@ public class OverfillException : Exception
     {
         Console.Error.WriteLine("Masa ładunku przekracza maksymalną ładowność!");
     }
+
+
 }

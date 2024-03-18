@@ -16,24 +16,28 @@ public class Container
         Heigth = heigth;
         ContainerWeigth = containerWeigth;
         Depth = depth;
-        SerialNumber = serialNumber;
         MaxLoad = maxLoad;
+        SerialNumber = "KON-"+serialNumber;
     }
 
-    public void Deload()
+    public void Deload(float deloadMass)
+    {
+        LoadWeigth -= deloadMass;
+    }
+    public void Empty()
     {
         LoadWeigth = 0;
     }
 
-    public void Load(float LoadWeigth)
+    public void Load(float loadMass)
     {
-        if (LoadWeigth > MaxLoad)
+        if (loadMass > MaxLoad)
         {
             throw new OverfillException();
         }
         else
         {
-            LoadWeigth = LoadWeigth;
+            LoadWeigth = loadMass;
         }
     }
 }
