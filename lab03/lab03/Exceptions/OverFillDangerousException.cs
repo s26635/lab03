@@ -2,8 +2,8 @@
 
 public class OverFillDangerousException : Exception
 {
-    public OverFillDangerousException()
+    public OverFillDangerousException(int poj)
     {
-        Console.Error.WriteLine("Masa ładunku niebezpiecznego nie może przekraczać 50% maksymalnej pojemności!");
+        Console.Error.WriteLine("Masa ładunku niebezpiecznego nie może przekraczać"+poj+" maksymalnej pojemności!");
     }
 }

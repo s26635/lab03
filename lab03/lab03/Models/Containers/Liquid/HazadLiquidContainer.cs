@@ -13,7 +13,7 @@ public class HazardLiquidContainer : Container, IHazardNotifier
     {
         if (LoadWeigth + loadMass > 0.5f * MaxLoad)
         {
-            throw new OverFillDangerousException();
+            throw new OverFillDangerousException(50);
         }
         else
         {

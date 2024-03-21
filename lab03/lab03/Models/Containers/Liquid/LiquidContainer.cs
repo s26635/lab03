@@ -24,7 +24,7 @@ public class LiquidContainer : Container, IHazardNotifier
         {
             if (LoadWeigth+loadMass > (0.5)*MaxLoad)
             {
-                throw new OverFillDangerousException();
+                throw new OverFillDangerousException(50);
             }
             else
             {

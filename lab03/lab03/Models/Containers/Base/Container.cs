@@ -40,4 +40,9 @@ public class Container
             LoadWeigth = loadMass;
         }
     }
+
+    public string getSerialNumber()
+    {
+        return SerialNumber;
+    }
 }
