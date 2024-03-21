@@ -2,8 +2,7 @@
 
 public class NormalLiquidContainer : Container
 {
-    public NormalLiquidContainer(float loadWeight, float height, float containerWeight, float depth, string serialNumber, float maxLoad)
-        : base(loadWeight, height, containerWeight, depth, serialNumber, maxLoad)
+    public NormalLiquidContainer(float loadWeigth, float heigth, float containerWeigth, float depth, string serialNumber, float maxLoad, char containerType) : base(loadWeigth, heigth, containerWeigth, depth, serialNumber, maxLoad, containerType)
     {
     }
 

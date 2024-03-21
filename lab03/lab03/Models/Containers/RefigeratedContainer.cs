@@ -6,12 +6,11 @@
         public float RequiredTemperature { get; }
         public float CurrentTemperature { get; private set; }
 
-        public RefrigeratedContainer(float loadWeight, float height, float containerWeight, float depth, string serialNumber, float maxLoad, string productType, float requiredTemperature)
-            : base(loadWeight, height, containerWeight, depth, serialNumber, maxLoad)
+        public RefrigeratedContainer(float loadWeigth, float heigth, float containerWeigth, float depth, string serialNumber, float maxLoad, char containerType, string productType, float requiredTemperature, float currentTemperature) : base(loadWeigth, heigth, containerWeigth, depth, serialNumber, maxLoad, containerType)
         {
             ProductType = productType;
             RequiredTemperature = requiredTemperature;
-            CurrentTemperature = requiredTemperature; 
+            CurrentTemperature = currentTemperature;
         }
 
         public void Load(float loadMass, string productType, float requiredTemperature)

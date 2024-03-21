@@ -5,10 +5,10 @@ namespace lab03.Models;
 public class GasContainer : Container, IHazardNotifier
 {
     protected float Pressure { set; get; }
-    
-    public GasContainer(float loadWeigth, float heigth, float containerWeigth, float depth, string serialNumber, float maxLoad) : base(loadWeigth, heigth, containerWeigth, depth, serialNumber, maxLoad)
+
+    public GasContainer(float loadWeigth, float heigth, float containerWeigth, float depth, string serialNumber, float maxLoad, char containerType, float pressure) : base(loadWeigth, heigth, containerWeigth, depth, serialNumber, maxLoad, containerType)
     {
-        
+        Pressure = pressure;
     }
 
     public void Deload(float deloadMass)
