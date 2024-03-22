@@ -1,21 +1,28 @@
-﻿namespace lab03.Models;
+﻿using lab03.Interfaces;
 
-public class NormalLiquidContainer : Container
+namespace lab03.Models;
+
+public class HazardLiquidContainer : Container, IHazardNotifier
 {
-    public NormalLiquidContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad, string containerType) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, containerType)
+    public HazardLiquidContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad, string containerType) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, containerType)
     {
     }
 
     public void Load(float loadMass)
     {
-        if (LoadWeigth + loadMass > 0.9f * MaxLoad)
+        if (LoadWeigth + loadMass > 0.5f * MaxLoad)
         {
-            // throw new OverfillException("Przekroczono 90% ładunku");
+            throw new OverFillDangerousException(50);
         }
         else
         {
             LoadWeigth += loadMass;
         }
+    }
+
+    public void Notify()
+    {
+        Console.WriteLine("Dangerous situation for container: " + SerialNumber);
     }
     
     public void printContainerData()

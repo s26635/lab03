@@ -6,7 +6,7 @@ public class GasContainer : Container, IHazardNotifier
 {
     protected float Pressure { set; get; }
 
-    public GasContainer(float loadWeigth, float heigth, float containerWeigth, float depth, string serialNumber, float maxLoad, char containerType, float pressure) : base(loadWeigth, heigth, containerWeigth, depth, serialNumber, maxLoad, containerType)
+    public GasContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad, string containerType, float pressure) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, containerType)
     {
         Pressure = pressure;
     }
@@ -37,5 +37,17 @@ public class GasContainer : Container, IHazardNotifier
     public void Notify()
     {
         Console.WriteLine("Dangerous situation for container: "+ SerialNumber);
+    }
+    
+    public void printContainerData()
+    {
+        string toPrint = "Aktualnie załadowana waga: " + LoadWeigth +
+                         "Ciśnienie: "+Pressure+
+                         "Numer seryjny kontenera: " + SerialNumber +
+                         "Maksymalna ładowność: " + MaxLoad +
+                         "Waga kontenera: " + ContainerWeigth +
+                         "Wysokość: " + Heigth +
+                         "Głebkokość: " + Depth;
+        Console.WriteLine(toPrint);
     }
 }

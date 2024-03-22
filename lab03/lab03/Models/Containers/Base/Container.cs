@@ -10,8 +10,8 @@ public class Container
     protected float MaxLoad { get; set; }
     private static int numberOfContainers = 1;
 
-    public Container(float loadWeigth, float heigth, float containerWeigth, float depth, string serialNumber,
-        float maxLoad, char containerType)
+    public Container(float loadWeigth, float heigth, float containerWeigth, float depth,
+        float maxLoad, string containerType)
     {
         LoadWeigth = loadWeigth;
         Heigth = heigth;
@@ -21,7 +21,7 @@ public class Container
         SerialNumber = GenerateSerialNumber(containerType);
     }
 
-    public string GenerateSerialNumber(char type)
+    public string GenerateSerialNumber(string type)
     {
         string result = $"KON-{type}-{numberOfContainers}";
         numberOfContainers++;
@@ -32,6 +32,7 @@ public class Container
     {
         LoadWeigth -= deloadMass;
     }
+
     public void Empty()
     {
         LoadWeigth = 0;
@@ -49,8 +50,19 @@ public class Container
         }
     }
 
-    public string getSerialNumber()
+    public string GetSerialNumber()
     {
         return SerialNumber;
+    }
+
+    public void PrintContainerData()
+    {
+        string toPrint = "Aktualnie załadowana waga: " + LoadWeigth +
+                         " Numer seryjny kontenera: " + SerialNumber +
+                         " Maksymalna ładowność: " + MaxLoad +
+                         " Waga kontenera: " + ContainerWeigth +
+                         " Wysokość: " + Heigth +
+                         " Głebkokość: " + Depth;
+        Console.WriteLine(toPrint);
     }
 }
