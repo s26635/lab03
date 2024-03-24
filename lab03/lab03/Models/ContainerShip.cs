@@ -4,10 +4,10 @@ namespace lab03.Models;
 
 public class ContainerShip
 {
-    private List<Container> Containers { get; set; }
-    private float MaxSpeed { get; set; }
-    private int MaxContainerNumber { get; set; }
-    private float MaxContainerWeight { get; set; }
+    protected List<Container> Containers { get; set; }
+    protected float MaxSpeed { get; set; }
+    protected int MaxContainerNumber { get; set; }
+    protected float MaxContainerWeight { get; set; }
 
     public ContainerShip(float maxSpeed, int maxContainerNumber, float maxContainerWeight)
     {
@@ -85,5 +85,20 @@ public class ContainerShip
 
         string result = resultBuilder.ToString();
         Console.WriteLine(result);
+    }
+    
+    public float GetMaxSpeed()
+    {
+        return MaxSpeed;
+    }
+
+    public int GetMaxContainerNumber()
+    {
+        return MaxContainerNumber;
+    }
+
+    public float GetMaxContainerWeight()
+    {
+        return MaxContainerWeight;
     }
 }

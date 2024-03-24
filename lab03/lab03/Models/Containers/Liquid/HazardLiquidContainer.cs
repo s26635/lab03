@@ -8,10 +8,11 @@ public class HazardLiquidContainer : Container, IHazardNotifier
     {
     }
 
-    public void Load(float loadMass)
+    public new void Load(float loadMass)
     {
         if (LoadWeigth + loadMass > 0.5f * MaxLoad)
         {
+            Notify();
             throw new OverFillDangerousException(50);
         }
         else

@@ -10,12 +10,17 @@ public class NormalLiquidContainer : Container
     {
         if (LoadWeigth + loadMass > 0.9f * MaxLoad)
         {
+            Notify();
             throw new OverfillException("Przekroczono 90% ładunku!");
         }
         else
         {
             LoadWeigth += loadMass;
         }
+    }
+    public void Notify()
+    {
+        Console.WriteLine("Dangerous situation for container: " + SerialNumber);
     }
     
     public void printContainerData()
