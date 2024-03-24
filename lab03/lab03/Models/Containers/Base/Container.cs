@@ -13,11 +13,11 @@ public class Container
     public Container(float loadWeigth, float heigth, float containerWeigth, float depth,
         float maxLoad, string containerType = "N")
     {
-        LoadWeigth = loadWeigth;
         Heigth = heigth;
         ContainerWeigth = containerWeigth;
         Depth = depth;
         MaxLoad = maxLoad;
+        Load(loadWeigth);
         GenerateSerialNumber(containerType);
     }
 

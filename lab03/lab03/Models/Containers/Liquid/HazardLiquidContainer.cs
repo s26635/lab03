@@ -6,6 +6,7 @@ public class HazardLiquidContainer : Container, IHazardNotifier
 {
     public HazardLiquidContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, "HL")
     {
+
     }
 
     public new void Load(float loadMass)

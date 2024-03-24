@@ -169,6 +169,8 @@ class Program
         {
             Console.WriteLine(
                 $"Statek {i + 1}. (speed={_listShip[i].GetMaxSpeed()}, maxContainerNum={_listShip[i].GetMaxContainerNumber()}, maxWeight={_listShip[i].GetMaxContainerWeight()})");
+            Console.WriteLine($"Jego kontenery: ");
+            _listShip[i].PrintContainerList();
         }
     }
 
