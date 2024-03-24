@@ -10,10 +10,8 @@
 
         public RefrigeratedContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad, string productType, float requiredTemperature, float currentTemperature) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, "R")
         {
-            ProductType = productType;
-            RequiredTemperature = requiredTemperature;
             CurrentTemperature = currentTemperature;
-            Load(LoadWeigth);
+            Load(LoadWeigth, productType, requiredTemperature);
         }
 
         public void Load(float loadMass, string productType, float requiredTemperature)
@@ -44,7 +42,7 @@
             CurrentTemperature = newTemperature;
         }
         
-        public void printContainerData()
+        public void PrintContainerData()
         {
             string toPrint = "Aktualnie załadowana waga: " + LoadWeigth +
                              " Aktualnie załadowany produkt: "+ProductType+

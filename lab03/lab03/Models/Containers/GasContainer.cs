@@ -41,7 +41,7 @@ public class GasContainer : Container, IHazardNotifier
         Console.WriteLine("Dangerous situation for container: "+ SerialNumber);
     }
     
-    public void printContainerData()
+    public void PrintContainerData()
     {
         string toPrint = "Aktualnie załadowana waga: " + LoadWeigth +
                          " Ciśnienie: "+Pressure+
