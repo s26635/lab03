@@ -2,9 +2,9 @@
 
 public class OverfillException : Exception
 {
-    public OverfillException()
+    public OverfillException(string msg)
     {
-        Console.Error.WriteLine("Masa ładunku przekracza maksymalną ładowność!");
+        Console.Error.WriteLine(msg);
     }
 
 

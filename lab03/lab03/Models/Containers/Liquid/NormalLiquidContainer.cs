@@ -2,7 +2,7 @@
 
 public class NormalLiquidContainer : Container
 {
-    public NormalLiquidContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad, string containerType) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, containerType)
+    public NormalLiquidContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, "NL")
     {
     }
 
@@ -10,7 +10,7 @@ public class NormalLiquidContainer : Container
     {
         if (LoadWeigth + loadMass > 0.9f * MaxLoad)
         {
-            // throw new OverfillException("Przekroczono 90% ładunku");
+            throw new OverfillException("Przekroczono 90% ładunku!");
         }
         else
         {
@@ -21,11 +21,11 @@ public class NormalLiquidContainer : Container
     public void printContainerData()
     {
         string toPrint = "Aktualnie załadowana waga: " + LoadWeigth +
-                         "Numer seryjny kontenera: " + SerialNumber +
-                         "Maksymalna ładowność: " + MaxLoad +
-                         "Waga kontenera: " + ContainerWeigth +
-                         "Wysokość: " + Heigth +
-                         "Głebkokość: " + Depth;
+                         " Numer seryjny kontenera: " + SerialNumber +
+                         " Maksymalna ładowność: " + MaxLoad +
+                         " Waga kontenera: " + ContainerWeigth +
+                         " Wysokość: " + Heigth +
+                         " Głebkokość: " + Depth;
         Console.WriteLine(toPrint);
     }
 }

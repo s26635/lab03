@@ -8,24 +8,23 @@ public class Container
     protected float Depth { get; set; }
     protected string SerialNumber { get; set; }
     protected float MaxLoad { get; set; }
-    private static int numberOfContainers = 1;
+    private static int _numberOfContainers = 1;
 
     public Container(float loadWeigth, float heigth, float containerWeigth, float depth,
-        float maxLoad, string containerType)
+        float maxLoad, string containerType = "N")
     {
         LoadWeigth = loadWeigth;
         Heigth = heigth;
         ContainerWeigth = containerWeigth;
         Depth = depth;
         MaxLoad = maxLoad;
-        SerialNumber = GenerateSerialNumber(containerType);
+        GenerateSerialNumber(containerType);
     }
 
-    public string GenerateSerialNumber(string type)
+    public void GenerateSerialNumber(string type)
     {
-        string result = $"KON-{type}-{numberOfContainers}";
-        numberOfContainers++;
-        return result;
+        SerialNumber = $"KON-{type}-{_numberOfContainers}";
+        _numberOfContainers++;
     }
 
     public void Deload(float deloadMass)
@@ -42,7 +41,7 @@ public class Container
     {
         if (loadMass > MaxLoad)
         {
-            throw new OverfillException();
+            throw new OverfillException("Przekroczono dopuszczalny ładunek!");
         }
         else
         {

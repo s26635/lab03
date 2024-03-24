@@ -5,13 +5,14 @@ namespace lab03.Models;
 public class GasContainer : Container, IHazardNotifier
 {
     protected float Pressure { set; get; }
+    
 
-    public GasContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad, string containerType, float pressure) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, containerType)
+    public GasContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad, float pressure) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, "G")
     {
         Pressure = pressure;
     }
 
-    public void Deload(float deloadMass)
+    public new void Deload(float deloadMass)
     {
         if (LoadWeigth-deloadMass < 0.05*LoadWeigth)
         {
@@ -23,11 +24,11 @@ public class GasContainer : Container, IHazardNotifier
         }
     }
 
-    public void Load(float loadMass)
+    public new void Load(float loadMass)
     {
         if (LoadWeigth+loadMass > MaxLoad)
         {
-            throw new OverfillException();
+            throw new OverfillException("Przekroczono dopuszczalną masę!");
         }
         else
         {
@@ -42,12 +43,12 @@ public class GasContainer : Container, IHazardNotifier
     public void printContainerData()
     {
         string toPrint = "Aktualnie załadowana waga: " + LoadWeigth +
-                         "Ciśnienie: "+Pressure+
-                         "Numer seryjny kontenera: " + SerialNumber +
-                         "Maksymalna ładowność: " + MaxLoad +
-                         "Waga kontenera: " + ContainerWeigth +
-                         "Wysokość: " + Heigth +
-                         "Głebkokość: " + Depth;
+                         " Ciśnienie: "+Pressure+
+                         " Numer seryjny kontenera: " + SerialNumber +
+                         " Maksymalna ładowność: " + MaxLoad +
+                         " Waga kontenera: " + ContainerWeigth +
+                         " Wysokość: " + Heigth +
+                         " Głebkokość: " + Depth;
         Console.WriteLine(toPrint);
     }
 }

@@ -6,7 +6,9 @@
         public float RequiredTemperature { get; }
         public float CurrentTemperature { get; private set; }
 
-        public RefrigeratedContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad, string containerType, string productType, float requiredTemperature, float currentTemperature) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, containerType)
+
+
+        public RefrigeratedContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad, string productType, float requiredTemperature, float currentTemperature) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, "R")
         {
             ProductType = productType;
             RequiredTemperature = requiredTemperature;
@@ -44,14 +46,14 @@
         public void printContainerData()
         {
             string toPrint = "Aktualnie załadowana waga: " + LoadWeigth +
-                             "Aktualnie załadowany produkt: "+ProductType+
-                             "Aktualna temperatura: "+CurrentTemperature+
-                             "Wymagania temperatura: "+RequiredTemperature+
-                             "Numer seryjny kontenera: " + SerialNumber +
-                             "Maksymalna ładowność: " + MaxLoad +
-                             "Waga kontenera: " + ContainerWeigth +
-                             "Wysokość: " + Heigth +
-                             "Głebkokość: " + Depth;
+                             " Aktualnie załadowany produkt: "+ProductType+
+                             " Aktualna temperatura: "+CurrentTemperature+
+                             " Wymagania temperatura: "+RequiredTemperature+
+                             " Numer seryjny kontenera: " + SerialNumber +
+                             " Maksymalna ładowność: " + MaxLoad +
+                             " Waga kontenera: " + ContainerWeigth +
+                             " Wysokość: " + Heigth +
+                             " Głebkokość: " + Depth;
             Console.WriteLine(toPrint);
         }
     }
