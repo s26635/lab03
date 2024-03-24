@@ -4,6 +4,7 @@ public class NormalLiquidContainer : Container
 {
     public NormalLiquidContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, "NL")
     {
+        Load(LoadWeigth);
     }
 
     public void Load(float loadMass)

@@ -13,6 +13,7 @@
             ProductType = productType;
             RequiredTemperature = requiredTemperature;
             CurrentTemperature = currentTemperature;
+            Load(LoadWeigth);
         }
 
         public void Load(float loadMass, string productType, float requiredTemperature)

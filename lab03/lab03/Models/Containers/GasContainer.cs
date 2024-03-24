@@ -10,9 +10,10 @@ public class GasContainer : Container, IHazardNotifier
     public GasContainer(float loadWeigth, float heigth, float containerWeigth, float depth, float maxLoad, float pressure) : base(loadWeigth, heigth, containerWeigth, depth, maxLoad, "G")
     {
         Pressure = pressure;
+        Load(LoadWeigth);
     }
 
-    public new void Deload(float deloadMass)
+    public void Deload(float deloadMass)
     {
         if (LoadWeigth-deloadMass < 0.05*LoadWeigth)
         {
@@ -24,7 +25,7 @@ public class GasContainer : Container, IHazardNotifier
         }
     }
 
-    public new void Load(float loadMass)
+    public void Load(float loadMass)
     {
         if (LoadWeigth+loadMass > MaxLoad)
         {
